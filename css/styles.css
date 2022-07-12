@@ -476,7 +476,24 @@ a {
 .about-item {
     /* width: calc((100% - 60px) / 3); */
     --numbercard: 3;
+    position: relative;
+
 }
+
+.about-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 27px 0;
+
+    width: 100%;
+
+    background: rgba(47, 48, 58, 0.8);
+}
+
 
 /* .about-item:not(:last-child) {
     margin-right: 30px;
@@ -638,6 +655,57 @@ a {
     transition: box-shadow var(--timeanime) var(--functionanime);
 }
 
+.project-position {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-position::before {
+    display: inline-block;
+
+    /* padding: 63px 27px; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(33, 150, 243, 0.9);
+    /* opacity: 0; */
+    transform: translateY(100%);
+    transition: transform var(--timeanime) var(--functionanime);
+}
+
+.project-link:hover .project-position::before {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-position-desc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+    width: 322px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    
+    color: var(--backgroundbody-color);
+    opacity: 0;
+}
+
+.project-link:hover .project-position-desc {
+    opacity: 1;
+}
+
 /* Conteiner Footer */
 .footer {
     padding-top: 60px;
@@ -707,6 +775,18 @@ a {
     line-height: 1.14;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.about-subtitle {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+
+    margin: 0;
+
+    text-transform: uppercase;
+
+    color: var(--backgroundbody-color);
 }
 
 .workers-subtitle {
